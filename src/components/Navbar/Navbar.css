@@ -1,0 +1,36 @@
+.navbar.navbar-light .breadcrumb .nav-item .nav-link:hover,
+.navbar.navbar-light .navbar-nav .nav-item .nav-link:hover {
+    color: #06c432;
+}
+
+.navbar.navbar-light .breadcrumb .nav-item.active>.nav-link,
+.navbar.navbar-light .navbar-nav .nav-item.active>.nav-link {
+    color: white;
+    background-color: #06c432;
+}
+
+.navbar.navbar-light .breadcrumb .nav-item.active>.nav-link,
+.navbar.navbar-light .navbar-nav .nav-item.active>.nav-link:hover {
+    color: white;
+}
+
+.navbar .nav-item .nav-link {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.navbar-expand-md .navbar-nav .nav-link {
+    padding-right: 1rem;
+    padding-left: 1rem;
+    font-size: medium;
+}
+
+.btn,
+.btn:hover {
+    background-color: #06c432;
+    color: white;
+}
+
+.navbar-brand {
+    padding-left: 2rem;
+}
