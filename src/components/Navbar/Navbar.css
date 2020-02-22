@@ -25,12 +25,21 @@
     font-size: medium;
 }
 
-.btn,
-.btn:hover {
+.btn {
     background-color: #06c432;
+    color: white;
+}
+
+.btn:hover {
     color: white;
 }
 
 .navbar-brand {
     padding-left: 2rem;
+}
+
+.dropdown-item:focus,
+.dropdown-item:hover {
+    color: white !important;
+    background-color: #06c432;
 }

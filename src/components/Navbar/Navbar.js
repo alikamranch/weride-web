@@ -46,13 +46,11 @@ class Navbar extends Component {
                                 <MDBNavItem>
                                     <MDBDropdown>
                                         <MDBDropdownToggle nav caret>
-                                            <span className="mr-2">Dropdown</span>
+                                            <span className="mr-2">Let's Ride!</span>
                                         </MDBDropdownToggle>
                                         <MDBDropdownMenu>
-                                            <MDBDropdownItem href="#!">Action</MDBDropdownItem>
-                                            <MDBDropdownItem href="#!">Another Action</MDBDropdownItem>
-                                            <MDBDropdownItem href="#!">Something else here</MDBDropdownItem>
-                                            <MDBDropdownItem href="#!">Something else here</MDBDropdownItem>
+                                            <MDBDropdownItem href="#!">Book now</MDBDropdownItem>
+                                            <MDBDropdownItem href="#!">FAQs</MDBDropdownItem>
                                         </MDBDropdownMenu>
                                     </MDBDropdown>
                                 </MDBNavItem>

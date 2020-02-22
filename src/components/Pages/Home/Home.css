@@ -1,3 +1,19 @@
-.text {
-    color: green;
+.background {
+    background-image: url("../../../assets/images/wallpaper.png");
+    background-size: cover;
+    background-position: center center;
+    min-height: 80vh;
+}
+
+.text-top-spacing {
+    margin-top: 17rem;
+}
+
+.card-top-spacing {
+    margin-top: 13rem;
+}
+
+.button-color {
+    background-color: #0d5d20;
+    width: 170px;
 }
