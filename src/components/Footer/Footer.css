@@ -1,0 +1,20 @@
+.footer-text {
+    color: white;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+}
+
+.footer-text-parent {
+    position: relative;
+    height: inherit;
+}
+
+.background-footer {
+    background-image: url("../../assets/images/footer.png");
+    background-size: cover;
+    /* background-position: center center; */
+    height: 500px;
+    width: 100%;
+}
