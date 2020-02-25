@@ -2,6 +2,8 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { MDBBtn, MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBContainer, MDBRow, MDBCol, MDBIcon } from 'mdbreact';
 import './Home.css'
+import carpool from '../../../assets/images/car-sharing.png';
+import carpool2 from '../../../assets/images/car-sharing 2.png';
 
 function Home() {
     const headingStyle = {
@@ -13,10 +15,12 @@ function Home() {
 
     return (
         <div>
+            {/* Crousel wallpaper */}
             <div className="background img-fluid">
                 <Helmet>
                     <title>Home</title>
                 </Helmet>
+
 
                 <MDBContainer fluid>
                     <MDBRow >
@@ -61,7 +65,9 @@ function Home() {
                     </MDBRow>
                 </MDBContainer>
             </div>
+            {/* Crousel wallpaper end */}
 
+            {/* Carpool Section */}
             <MDBContainer>
                 <MDBRow className="justify-content-center top"><h1 className="font-style">Why Carpool?</h1></MDBRow>
                 <br />
@@ -72,8 +78,8 @@ function Home() {
                         <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder" width="140" height="140"></img>
                         <br />
                         <br />
-                        <h2 className="carpool-headings">Heading 1</h2>
-                        <p>Sample paragragh</p>
+                        <h2 className="carpool-headings">Economical</h2>
+                        <p className="home-carpool-paragragh">With shared rides the fare gets divided among the number of riders.</p>
                     </MDBCol>
                     <br />
                     <br />
@@ -81,8 +87,8 @@ function Home() {
                         <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder" width="140" height="140"></img>
                         <br />
                         <br />
-                        <h2 className="carpool-headings">Heading 2</h2>
-                        <p>Sample paragragh</p>
+                        <h2 className="carpool-headings">Less Traffic</h2>
+                        <p className="home-carpool-paragragh">With more people carpooling there will be less cars on the road.</p>
                     </MDBCol>
                     <br />
                     <br />
@@ -90,8 +96,8 @@ function Home() {
                         <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder" width="140" height="140"></img>
                         <br />
                         <br />
-                        <h2 className="carpool-headings">Heading 3</h2>
-                        <p>Sample paragragh</p>
+                        <h2 className="carpool-headings">Reduced Pollution</h2>
+                        <p>Less cars on the road keeps the air clean.</p>
                     </MDBCol>
                     <br />
                     <br />
@@ -99,14 +105,63 @@ function Home() {
                         <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder" width="140" height="140"></img>
                         <br />
                         <br />
-                        <h2 className="carpool-headings">Heading 4</h2>
-                        <p>Sample paragragh</p>
+                        <h2 className="carpool-headings">Socialize</h2>
+                        <p>Shared trips allow you to interact while your journey.</p>
                     </MDBCol>
                     <br />
                     <br />
                 </MDBRow>
             </MDBContainer>
-        </div>
+            {/* Carpool Section end */}
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            {/* Featurette */}
+            <div className="home-featurette-background img-fluid">
+            </div>
+            <MDBContainer>
+                <div className="home-featurette-container-inner text-left">
+                    <MDBRow>
+                        <MDBCol lg="6">
+                            <h1 className="home-featurette-heading">Why ride with us?</h1>
+                            <p className="home-featurette-paragragh ">WERide is the first dedicated carpooling service in Pakistan. Our aim is to provide cheap journeys with the utmost security and comfortable experience.</p>
+                        </MDBCol>
+                        <MDBCol lg="6" className="img-fluid">
+                            <img src={carpool} alt="carpool-concept" className="mx-auto home-featurette-carpoolimg img-fluid" />
+                        </MDBCol>
+                    </MDBRow>
+                </div>
+            </MDBContainer>
+            {/* Featurette end */}
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+
+            <MDBContainer fluid style={{ padding: "50px" }}>
+                <MDBRow>
+                    <MDBCol lg="6" className="img-fluid">
+                        <img src={carpool2} alt="carpool-concept" width="700" height="700" className="mx-auto img-fluid" />
+                    </MDBCol>
+
+                    <MDBCol lg="6" className="text-left">
+                        <br />
+                        <br />
+                        <br />
+                        <h1 className="home-featurette-heading">Keep making friends on the go.</h1>
+                        <p className="home-featurette-paragragh ">Our main purpose is to bring the Pakistani community together. We encourage interaction during the journey. What's better than paying less and spending some quality time right?</p>
+                    </MDBCol>
+                </MDBRow>
+            </MDBContainer>
+
+
+
+        </div >
 
     );
 

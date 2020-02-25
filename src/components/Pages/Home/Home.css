@@ -5,6 +5,51 @@
     min-height: 80vh;
 }
 
+.home-featurette-background {
+    background-image: url("../../../assets/images/wallpaper\ 3.jpg");
+    background-size: cover;
+    background-position: center center;
+    min-height: 70vh;
+}
+
+.home-featurette-container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.home-featurette-carpoolimg {
+    width: 400;
+    height: 400;
+}
+
+.home-featurette-heading {
+    font-weight: 600;
+    color: #06c432;
+}
+
+.home-featurette-container-inner {
+    padding: 72px 68px 0;
+    margin-top: -150px;
+    position: relative;
+    z-index: 1;
+    -webkit-border-radius: 4px;
+    -khtml-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    background-color: white;
+}
+
+.home-featurette-paragragh {
+    color: gray;
+    font-size: larger;
+    font-weight: 400;
+
+}
+
 .text-top-spacing {
     margin-top: 17rem;
 }
@@ -43,4 +88,8 @@
 
 .carpool-headings {
     color: #06c432;
+}
+
+.home-carpool-paragragh {
+    color: gray;
 }
