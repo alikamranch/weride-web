@@ -7,6 +7,7 @@
 .navbar.navbar-light .navbar-nav .nav-item.active>.nav-link {
     color: white;
     background-color: #06c432;
+    border-radius: 4px;
 }
 
 .navbar.navbar-light .breadcrumb .nav-item.active>.nav-link,
