@@ -44,3 +44,14 @@
     color: white !important;
     background-color: #06c432;
 }
+
+.navbar-modal-header {
+    color: white;
+    background-color: #06c432;
+}
+
+.navbar-navlink-style {
+    color: white !important;
+    background-color: #06c432;
+    border-radius: 4px;
+}
