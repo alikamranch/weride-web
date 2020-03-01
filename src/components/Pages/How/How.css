@@ -1,0 +1,27 @@
+.how-background {
+    background-image: url("../../../assets/images/how-carousel.png");
+    background-size: cover;
+    background-position: center;
+    min-height: 80vh;
+}
+
+.how-carousel-heading {
+    color: white;
+    font-weight: 650;
+}
+
+.how-car-icon {
+    color: #b62ab5;
+}
+
+.how-map-icon {
+    color: #00c6b0;
+}
+
+.how-pay-icon {
+    color: #48a13f;
+}
+
+.how-container-bg {
+    background-color: #f9fafb;
+}
