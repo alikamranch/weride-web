@@ -25,3 +25,129 @@
 .how-container-bg {
     background-color: #f9fafb;
 }
+
+.how-step-card {
+    margin-bottom: 10px;
+    padding-left: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.how-step-card .how-step-counter {
+    float: left;
+    margin-bottom: 30px;
+    width: 82px;
+}
+
+.how-step-card.active .how-step-counter span {
+    background-color: #0d5d20;
+    border-color: #EEF0F1;
+    color: #fff;
+}
+
+.how-step-card .how-step-counter span {
+    width: 82px;
+    height: 82px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 14px solid #f6f8f9;
+    color: #0d5d20;
+    transition: all .2s ease-in-out;
+}
+
+.how-step-card .how-step-body {
+    float: left;
+    width: calc(100% - 82px);
+    padding-left: 15px;
+    margin-bottom: 30px;
+}
+
+.how-step-card .how-step-title {
+    font-size: 16px;
+    line-height: 1.38;
+    text-align: left;
+    color: black;
+}
+
+.how-step-card .how-step-description {
+    font-size: 14px;
+    line-height: 1.29;
+    text-align: left;
+    color: #606c74;
+    margin-bottom: 0;
+}
+
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+    color: #495057;
+    font-weight: 700;
+    background-color: #f9fafb;
+    border-color: #28a745 #f9fafb #f9fafb;
+    border-radius: unset;
+    border-top-width: medium;
+}
+
+.nav-tabs .nav-item>a {
+    color: black;
+}
+
+.how-fleet-car {
+    height: 50px;
+    width: 110px;
+}
+
+.how-fleet-rickshaw {
+    height: 50px;
+    width: 75px;
+}
+
+.how-fleet-rickshaw2 {
+    max-height: 207.38px;
+}
+
+
+.how-fleet-text-margin {
+    margin-left: 20px;
+    margin-top: 5rem;
+}
+
+.how-stepper-display {
+    display: none;
+}
+
+
+.how-stepper-fade {
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.fade {
+    -webkit-animation-name: fade;
+    animation-name: fade;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
