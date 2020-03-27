@@ -8,7 +8,7 @@ import stepperPlaceholder2 from '../../../assets/images/stepper-placeholder2.png
 import stepperPlaceholder3 from '../../../assets/images/stepper-placeholder3.png';
 import stepperPlaceholder4 from '../../../assets/images/stepper-placeholder4.png';
 import standard from '../../../assets/images/standard-ride.png';
-import rickshaw from '../../../assets/images/rickshaw-ride.jpg';
+import rickshaw from '../../../assets/images/rickshaw-ride.png';
 
 class How extends React.Component {
 

@@ -120,6 +120,7 @@
 }
 
 
+/* Stepper image change animation start */
 .how-stepper-fade {
     -webkit-animation-duration: 2s;
     animation-duration: 2s;
@@ -151,3 +152,5 @@
         opacity: 1
     }
 }
+
+/* Stepper image change animation end */
