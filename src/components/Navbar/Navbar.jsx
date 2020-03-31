@@ -5,13 +5,21 @@ import {
 import './Navbar.css';
 import logo from "../../assets/images/WERide Transparent.png";
 import { NavLink } from 'react-router-dom';
+import firebase from '../firebase';
+import { withRouter } from 'react-router';
 
 
 class Navbar extends Component {
-    state = {
-        isOpen: false,
-        modal: false
-    };
+    constructor(props) {
+        super(props);
+        this.state = {
+            isOpen: false,
+            modal: false,
+            email: "",
+            password: "",
+        };
+    }
+
 
     toggleCollapse = () => {
         this.setState({ isOpen: !this.state.isOpen });
@@ -22,6 +30,66 @@ class Navbar extends Component {
             modal: !this.state.modal
         });
     };
+
+    updateInput = e => {
+        this.setState({
+            [e.target.name]: e.target.value
+        });
+    };
+
+
+    login = e => {
+        e.preventDefault();
+        console.log("Submit");
+        let email = this.state.email;
+        let password = this.state.password;
+
+        //to copy data from firebase and change routes
+        const checkCreds = (doc) => {
+            var user = doc.data();
+            console.log(user);
+            if ((email === user.id_1.email && password === user.id_1.password)) {
+                this.props.loginHandler();
+                this.setState({
+                    modal: !this.state.modal
+                });
+                this.props.history.push('/rider');
+            }
+
+            if ((email === user.id_2.email && password === user.id_2.password)) {
+                this.props.loginHandler();
+                this.setState({
+                    modal: !this.state.modal
+                });
+                this.props.history.push('/driver');
+            }
+
+        };
+
+        //firebase setup
+        const db = firebase.firestore();
+        var docRef = db.collection("weride").doc("user");
+
+        docRef.get().then(function (doc) {
+            if (doc.exists) {
+                checkCreds(doc);
+
+            } else {
+                // doc.data() will be undefined in this case
+                console.log("No such document!");
+            }
+        }).catch(function (error) {
+            console.log("Error getting document:", error);
+        });
+
+        //change state after login
+        this.setState({
+            email: "",
+            password: ""
+        });
+    };
+
+
 
     render() {
         return (
@@ -61,17 +129,22 @@ class Navbar extends Component {
                                     <MDBModalBody>
                                         <MDBRow className="justify-content-center">
                                             <MDBCol md="6">
-                                                <form>
-                                                    <input type="email" id="defaultFormLoginEmailEx" className="form-control" placeholder="Email" />
+                                                <form onSubmit={this.login}>
+                                                    <input type="email" id="defaultFormLoginEmailEx" className="form-control" placeholder="Email" name="email"
+                                                        onChange={this.updateInput}
+                                                        value={this.state.email} />
                                                     <br />
-                                                    <input type="password" id="defaultFormLoginPasswordEx" className="form-control" placeholder="Password" />
+                                                    <input type="password" id="defaultFormLoginPasswordEx" className="form-control" placeholder="Password"
+                                                        name="password"
+                                                        onChange={this.updateInput}
+                                                        value={this.state.password} />
                                                     <br />
                                                 </form>
                                             </MDBCol>
                                         </MDBRow>
                                     </MDBModalBody>
                                     <MDBModalFooter className="justify-content-center">
-                                        <MDBBtn href="#" color="#0d5d20" className="button-color">Sign In</MDBBtn>
+                                        <MDBBtn href="#" color="#0d5d20" className="button-color" type="submit" onClick={this.login}>Sign In</MDBBtn>
                                         <MDBBtn href="#" color="#4285f4" className="google-button-color"><MDBIcon fab icon="google" size="lg" /> Sign In with Google</MDBBtn>
                                     </MDBModalFooter>
                                 </MDBModal>
@@ -86,4 +159,4 @@ class Navbar extends Component {
     }
 }
 
-export default Navbar;
+export default withRouter(Navbar);
