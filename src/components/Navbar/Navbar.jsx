@@ -47,7 +47,6 @@ class Navbar extends Component {
         //to copy data from firebase and change routes
         const checkCreds = (doc) => {
             var user = doc.data();
-            console.log(user);
             if ((email === user.id_1.email && password === user.id_1.password)) {
                 this.props.loginHandler();
                 this.setState({
