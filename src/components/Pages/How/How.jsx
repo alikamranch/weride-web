@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBIcon, MDBTabPane, MDBTabContent, MDBNav, MDBNavItem, MDBNavLink } from 'mdbreact';
+import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBIcon, MDBTabPane, MDBTabContent, MDBNav, MDBNavItem, MDBNavLink, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText } from 'mdbreact';
 import './How.css';
 import { Link } from 'react-router-dom';
 import stepperPlaceholder from '../../../assets/images/stepper-placeholder.png';
@@ -9,6 +9,9 @@ import stepperPlaceholder3 from '../../../assets/images/stepper-placeholder3.png
 import stepperPlaceholder4 from '../../../assets/images/stepper-placeholder4.png';
 import standard from '../../../assets/images/standard-ride.png';
 import rickshaw from '../../../assets/images/rickshaw-ride.png';
+import package1 from '../../../assets/images/package1.png';
+import package2 from '../../../assets/images/package2.png';
+import package3 from '../../../assets/images/package3.png';
 
 class How extends React.Component {
 
@@ -315,6 +318,84 @@ class How extends React.Component {
                     </MDBContainer>
                 </div>
                 {/* Fleet tabs end */}
+
+                <br />
+                <br />
+                <hr className="how-hr-style" />
+                <br />
+                <br />
+
+                {/* Packages cards start */}
+                <div>
+                    <MDBContainer fluid>
+                        <h3><b><strong>Our Packages</strong></b></h3>
+
+                        <MDBContainer>
+                            <MDBRow className="mt-5">
+                                <MDBCol md="4" className="mt-5">
+                                    <MDBCol style={{ maxWidth: "22rem" }}>
+                                        <MDBCard>
+                                            <MDBCardImage className="img-fluid" src={package1}
+                                                waves />
+                                            <MDBCardBody>
+                                                <MDBCardTitle><b>Weekly</b></MDBCardTitle>
+                                                <MDBCardText>You will be able to book a driver of your choice based on their reviews and rating for a week of shared travel.</MDBCardText>
+                                            </MDBCardBody>
+                                        </MDBCard>
+                                    </MDBCol>
+                                </MDBCol>
+
+                                <MDBCol md="4" className="mt-5">
+                                    <MDBCol style={{ maxWidth: "22rem" }}>
+                                        <MDBCard>
+                                            <MDBCardImage className="img-fluid" src={package2}
+                                                waves />
+                                            <MDBCardBody>
+                                                <MDBCardTitle><b>Monthly</b></MDBCardTitle>
+                                                <MDBCardText>You will be able to book a driver of your choice based on their reviews and rating for a month of shared travel.</MDBCardText>
+                                            </MDBCardBody>
+                                        </MDBCard>
+                                    </MDBCol>
+                                </MDBCol>
+
+                                <MDBCol md="4" className="mt-5">
+                                    <MDBCol style={{ maxWidth: "22rem" }}>
+                                        <MDBCard>
+                                            <MDBCardImage className="img-fluid" src={package3}
+                                                waves />
+                                            <MDBCardBody>
+                                                <MDBCardTitle><b>Quarterly</b></MDBCardTitle>
+                                                <MDBCardText>You will be able to book a driver of your choice based on their reviews and rating for 3 months (one quarter) of shared travel.</MDBCardText>
+                                            </MDBCardBody>
+                                        </MDBCard>
+                                    </MDBCol>
+                                </MDBCol>
+                            </MDBRow>
+                        </MDBContainer>
+                    </MDBContainer>
+                    {/* package crousel image */}
+                    <div className="how-package img-fluid mt-5">
+
+                        {/* carousel image */}
+                        <MDBContainer fluid>
+                            <MDBRow className="text-left">
+                                <MDBCol md="7">
+
+                                </MDBCol>
+                                <MDBCol md="5">
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <h1 className="how-carousel-heading">Subscribe to a package and save big!</h1>
+                                    <h1 className="how-carousel-heading">Your daily commutes made easier.</h1>
+                                </MDBCol>
+                            </MDBRow>
+                        </MDBContainer>
+                        {/* carousel image end */}
+                    </div>
+                </div>
+                {/* Packages cards end */}
+
             </div>
 
         );
