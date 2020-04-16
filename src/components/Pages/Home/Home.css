@@ -58,23 +58,8 @@
     margin-top: 13rem;
 }
 
-.button-color {
-    background-color: #0d5d20;
-    width: 170px;
-}
-
-.google-button-color {
-    background-color: #4285f4;
-}
-
 .form-control:focus {
     border-color: #0d5d20;
-    box-shadow: 0 0 0 0.2rem #00c851;
-}
-
-.custom-select:focus {
-    border-color: #0d5d20;
-    outline: 0;
     box-shadow: 0 0 0 0.2rem #00c851;
 }
 

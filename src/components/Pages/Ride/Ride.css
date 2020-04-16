@@ -1,0 +1,41 @@
+.custom-select:focus {
+    border-color: #0d5d20;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem #00c851;
+}
+
+.md-form input[type="email"]:not(.browser-default):focus:not([readonly]) {
+    border-bottom: 1px solid #28a745;
+    box-shadow: 0 1px 0 0 #388e3c;
+}
+
+.md-form input[type="email"]:not(.browser-default):focus:not([readonly])+label {
+    color: #28a745;
+}
+
+.md-form input[type="password"]:not(.browser-default):focus:not([readonly]) {
+    border-bottom: 1px solid #28a745;
+    box-shadow: 0 1px 0 0 #388e3c;
+}
+
+.md-form input[type="password"]:not(.browser-default):focus:not([readonly])+label {
+    color: #28a745;
+}
+
+.md-form input[type="text"]:not(.browser-default):focus:not([readonly]) {
+    border-bottom: 1px solid #28a745;
+    box-shadow: 0 1px 0 0 #388e3c;
+}
+
+.md-form input[type="text"]:not(.browser-default):focus:not([readonly])+label {
+    color: #28a745;
+}
+
+.button-color {
+    background-color: #0d5d20;
+    width: 170px;
+}
+
+.google-button-color {
+    background-color: #4285f4;
+}

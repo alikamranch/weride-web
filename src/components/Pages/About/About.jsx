@@ -16,11 +16,10 @@ function About() {
                 <br />
                 <br />
                 <MDBContainer>
-                    <MDBRow className="justify-content-left">
-                        <h1>About Us</h1>
 
-                    </MDBRow>
+                    <h1 className="text-left">About Us</h1>
                     <hr />
+
                 </MDBContainer>
 
                 <br />
