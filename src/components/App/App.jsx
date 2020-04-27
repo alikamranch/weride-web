@@ -1,13 +1,15 @@
 import React from "react";
 import "./App.css";
+//App pages
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
 import Home from "../Pages/Home/Home";
 import About from "../Pages/About/About";
 import How from "../Pages/How/How";
 import Ride from "../Pages/Ride/Ride";
-import RiderHome from "../Pages/RiderPages/RiderHome/RiderHome";
+//Rider Pages
 import RiderNavbar from "../Pages/RiderPages/RiderNavbar/RiderNavbar";
+import RiderHome from "../Pages/RiderPages/RiderHome/RiderHome";
 import RiderProfile from "../Pages/RiderPages/RiderProfile/RiderProfile";
 import RiderHistory from "../Pages/RiderPages/RiderHistory/RiderHistory";
 import RiderGroups from "../Pages/RiderPages/RiderGroups/RiderGroups";
@@ -15,7 +17,16 @@ import RiderPackages from "../Pages/RiderPages/RiderPackages/RiderPackages";
 import RiderEditProfile from "../Pages/RiderPages/RiderEditProfile/RiderEditProfile";
 import RiderEditGroups from "../Pages/RiderPages/RiderEditGroups/RiderEditGroups";
 import RiderEditPackages from "../Pages/RiderPages/RiderEditPackages/RiderEditPackages";
-import DriverProfile from "../Pages/DriverProfile/DriverProfile";
+//Driver Pages
+import DriverNavbar from "../Pages/DriverPages/DriverNavbar/DriverNavbar";
+import DriverHome from "../Pages/DriverPages/DriverHome/DriverHome";
+import DriverProfile from "../Pages/DriverPages/DriverProfile/DriverProfile";
+import DriverHistory from "../Pages/DriverPages/DriverHistory/DriverHistory";
+import DriverEarnings from "../Pages/DriverPages/DriverEarnings/DriverEarnings";
+import DriverPackages from "../Pages/DriverPages/DriverPackages/DriverPackages";
+import DriverEditProfile from "../Pages/DriverPages/DriverEditProfile/DriverEditProfile";
+import DriverEditPackages from "../Pages/DriverPages/DriverEditPackages/DriverEditPackages";
+//Other Imports
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 class App extends React.Component {
@@ -25,10 +36,9 @@ class App extends React.Component {
       isRiderLoggedin: false,
       isDriverLoggedin: false,
     };
-
-    // this.loginHandler = this.loginHandler.bind(this);
   }
 
+  //To handle rider login in RiderNavbar component
   riderLoginHandler = () => {
     const currentState = this.state.isRiderLoggedin;
     this.setState({
@@ -36,6 +46,7 @@ class App extends React.Component {
     });
   };
 
+  //To handle driver login in DriverNavbar component
   driverLoginHandler = () => {
     const currentState = this.state.isDriverLoggedin;
     this.setState({
@@ -48,8 +59,9 @@ class App extends React.Component {
       <div className="App">
         <Router>
           {this.state.isRiderLoggedin ? (
+            //Render Rider pages
             <React.Fragment>
-              <RiderNavbar login={this.riderLoginHandler} />
+              <RiderNavbar loginRider={this.riderLoginHandler} />
               <Switch>
                 <Route path="/rider-home" exact component={RiderHome} />
                 <Route path="/rider-profile" component={RiderProfile} />
@@ -68,18 +80,37 @@ class App extends React.Component {
               </Switch>
             </React.Fragment>
           ) : this.state.isDriverLoggedin ? (
+            //Render Driver pages
             <React.Fragment>
-              <Route
-                path="/driver"
-                render={(props) => (
-                  <DriverProfile
-                    {...props}
-                    driverLoginHandler={this.driverLoginHandler}
-                  />
-                )}
-              />
+              <DriverNavbar loginDriver={this.driverLoginHandler} />
+              <Switch>
+                <Route path="/driver-home" exact component={DriverHome} />
+                <Route path="/driver-profile" exact component={DriverProfile} />
+                <Route path="/driver-history" exact component={DriverHistory} />
+                <Route
+                  path="/driver-earnings"
+                  exact
+                  component={DriverEarnings}
+                />
+                <Route
+                  path="/driver-packages"
+                  exact
+                  component={DriverPackages}
+                />
+                <Route
+                  path="/driver-edit-profile"
+                  exact
+                  component={DriverEditProfile}
+                />
+                <Route
+                  path="/driver-edit-packages"
+                  exact
+                  component={DriverEditPackages}
+                />
+              </Switch>
             </React.Fragment>
           ) : (
+            //Render Webapp pages
             <React.Fragment>
               <Navbar
                 riderLoginHandler={this.riderLoginHandler}

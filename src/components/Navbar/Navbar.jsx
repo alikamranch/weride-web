@@ -71,7 +71,7 @@ class Navbar extends Component {
         this.setState({
           modal: !this.state.modal,
         });
-        this.props.history.push("/driver");
+        this.props.history.push("/driver-home");
       }
     };
 

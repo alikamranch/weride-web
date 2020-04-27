@@ -15,9 +15,9 @@ import {
 } from "mdbreact";
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
-import "./RiderNavbar.css";
+import "./DriverNavbar.css";
 
-class RiderNavbar extends React.Component {
+class DriverNavbar extends React.Component {
   state = {
     isOpen: false,
   };
@@ -35,50 +35,50 @@ class RiderNavbar extends React.Component {
           <MDBNavbarNav left>
             <MDBNavItem>
               <NavLink
-                to="/rider-home"
+                to="/driver-home"
                 exact
                 className="nav-link"
-                activeClassName="ridernavbar-navlink-style"
+                activeClassName="drivernavbar-navlink-style"
               >
                 <MDBIcon size="lg" icon="home" /> Home
               </NavLink>
             </MDBNavItem>
             <MDBNavItem>
               <NavLink
-                to="/rider-profile"
+                to="/driver-profile"
                 exact
                 className="nav-link"
-                activeClassName="ridernavbar-navlink-style"
+                activeClassName="drivernavbar-navlink-style"
               >
                 <MDBIcon size="lg" icon="user" /> Profile
               </NavLink>
             </MDBNavItem>
             <MDBNavItem>
               <NavLink
-                to="/rider-history"
+                to="/driver-history"
                 exact
                 className="nav-link"
-                activeClassName="ridernavbar-navlink-style"
+                activeClassName="drivernavbar-navlink-style"
               >
                 <MDBIcon size="lg" icon="car-alt" /> Ride History
               </NavLink>
             </MDBNavItem>
             <MDBNavItem>
               <NavLink
-                to="/rider-groups"
+                to="/driver-earnings"
                 exact
                 className="nav-link"
-                activeClassName="ridernavbar-navlink-style"
+                activeClassName="drivernavbar-navlink-style"
               >
-                <MDBIcon size="lg" icon="users" /> Groups
+                <MDBIcon size="lg" icon="hand-holding-usd" /> Earnings
               </NavLink>
             </MDBNavItem>
             <MDBNavItem>
               <NavLink
-                to="/rider-packages"
+                to="/driver-packages"
                 exact
                 className="nav-link"
-                activeClassName="ridernavbar-navlink-style"
+                activeClassName="drivernavbar-navlink-style"
               >
                 <MDBIcon size="lg" icon="calendar-alt" /> Packages
               </NavLink>
@@ -90,15 +90,11 @@ class RiderNavbar extends React.Component {
                   <span className="mr-2">Settings</span>
                 </MDBDropdownToggle>
                 <MDBDropdownMenu>
-                  <Link to="/rider-edit-profile">
+                  <Link to="/driver-edit-profile">
                     <MDBDropdownItem>Edit Profile</MDBDropdownItem>
                   </Link>
 
-                  <Link to="rider-edit-groups">
-                    <MDBDropdownItem>Edit Groups</MDBDropdownItem>
-                  </Link>
-
-                  <Link to="/rider-edit-packages">
+                  <Link to="/driver-edit-packages">
                     <MDBDropdownItem>Manage Packages</MDBDropdownItem>
                   </Link>
                 </MDBDropdownMenu>
@@ -111,7 +107,7 @@ class RiderNavbar extends React.Component {
                 <MDBBtn
                   color="#06c432"
                   size="sm"
-                  onClick={this.props.loginRider}
+                  onClick={this.props.loginDriver}
                 >
                   <MDBIcon icon="sign-out-alt" /> <b>Logout</b>
                 </MDBBtn>
@@ -124,4 +120,4 @@ class RiderNavbar extends React.Component {
   }
 }
 
-export default RiderNavbar;
+export default DriverNavbar;
