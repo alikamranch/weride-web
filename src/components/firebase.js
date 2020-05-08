@@ -1,6 +1,8 @@
-import firebase from "firebase";
+import firebase from "firebase/app";
+import "firebase/auth";
+import "firebase/firestore";
 
-var firebaseConfig = {
+const firebaseConfig = {
     apiKey: "AIzaSyCxm1cOD_SiyEa2y2ru7Th797tTlVs4HSk",
     authDomain: "weride-web.firebaseapp.com",
     databaseURL: "https://weride-web.firebaseio.com",
@@ -13,4 +15,19 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
+export const auth = firebase.auth();
+export const firestore = firebase.firestore();
+export const getUserDocument = async uid => {
+    if (!uid) return null;
+    try {
+        const userDocument = await firestore.collection("weride").doc("user").collection("users").doc(`${uid}`).get();
+
+        return {
+            uid,
+            ...userDocument.data()
+        };
+    } catch (error) {
+        console.error("Error fetching user", error);
+    }
+};
 export default firebase;
