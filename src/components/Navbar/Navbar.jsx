@@ -131,7 +131,7 @@ function Navbar() {
                   <MDBRow className="justify-content-center">
                     <form onSubmit={login}>
                       <MDBRow className="justify-content-center">
-                        <MDBCol md="6">
+                        <MDBCol>
                           <input
                             type="email"
                             id="defaultFormLoginEmailEx"
@@ -162,14 +162,14 @@ function Navbar() {
                         >
                           Sign In
                         </MDBBtn>
-                        <MDBBtn
+                        {/* <MDBBtn
                           href="#"
                           color="#4285f4"
                           className="google-button-color"
                         >
                           <MDBIcon fab icon="google" size="lg" /> Sign In with
                           Google
-                        </MDBBtn>
+                        </MDBBtn> */}
                       </MDBModalFooter>
                     </form>
                   </MDBRow>

@@ -214,10 +214,10 @@ class Ride extends React.Component {
                       >
                         Sign Up
                       </MDBBtn>
-                      <MDBBtn color="#4285f4" className="google-button-color">
+                      {/* <MDBBtn color="#4285f4" className="google-button-color">
                         <MDBIcon fab icon="google" size="lg" /> Sign Up with
                         Google
-                      </MDBBtn>
+                      </MDBBtn> */}
                     </div>
                   </form>
                 </MDBCol>
