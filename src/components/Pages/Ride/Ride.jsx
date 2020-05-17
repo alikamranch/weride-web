@@ -1,14 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import { auth, firestore } from "../../firebase";
-import {
-  MDBContainer,
-  MDBRow,
-  MDBCol,
-  MDBInput,
-  MDBBtn,
-  MDBIcon,
-} from "mdbreact";
+import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from "mdbreact";
 import "./Ride.css";
 
 class Ride extends React.Component {

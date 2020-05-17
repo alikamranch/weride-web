@@ -151,8 +151,6 @@ const RiderUser = () => {
           <MDBRow>
             <MDBCol md="5">
               <div>
-                <br />
-                <br />
                 <MDBIcon
                   icon="wallet"
                   size="2x"
@@ -185,7 +183,7 @@ const RiderUser = () => {
               </div>
             </MDBCol>
             <MDBCol md="7" className="text-left">
-              <div className="mt-5">
+              <div>
                 <MDBTable borderless responsive>
                   <MDBTableBody>
                     <tr>

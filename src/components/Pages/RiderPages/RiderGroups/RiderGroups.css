@@ -1,3 +1,17 @@
 .rider-groups-card {
   margin-bottom: 20px;
 }
+
+.rider-groups-icon {
+  color: white;
+}
+
+.rider-groups-modal {
+  color: white;
+  background-color: #4285f4;
+}
+
+.rider-groups-nameColor {
+  color: green;
+  font-weight: 500;
+}

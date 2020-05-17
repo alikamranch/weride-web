@@ -14,7 +14,6 @@ import {
   MDBModalFooter,
   MDBCol,
   MDBRow,
-  MDBIcon,
 } from "mdbreact";
 import "./Navbar.css";
 import logo from "../../assets/images/WERide Transparent.png";
