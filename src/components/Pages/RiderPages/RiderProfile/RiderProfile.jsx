@@ -169,7 +169,7 @@ const RiderUser = () => {
               <br />
               <br />
               <div>
-                <strong className="rider-profile-icon">Package: </strong> Weekly
+                <strong className="rider-profile-icon">Package: </strong> None
                 <br />
                 <Link to="rider-packages">
                   <MDBBtn

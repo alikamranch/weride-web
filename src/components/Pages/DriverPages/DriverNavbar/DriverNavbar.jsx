@@ -67,6 +67,16 @@ const DriverNavbar = () => {
           </MDBNavItem>
           <MDBNavItem>
             <NavLink
+              to="/driver-vehicles"
+              exact
+              className="nav-link"
+              activeClassName="drivernavbar-navlink-style"
+            >
+              <MDBIcon size="lg" icon="taxi" /> Vehicles
+            </NavLink>
+          </MDBNavItem>
+          <MDBNavItem>
+            <NavLink
               to="/driver-history"
               exact
               className="nav-link"

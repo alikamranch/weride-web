@@ -23,9 +23,9 @@ import carousel1 from "../../../../assets/images/carousel/carousel1.png";
 import carousel2 from "../../../../assets/images/carousel/carousel2.jpg";
 import carousel3 from "../../../../assets/images/carousel/carousel3.jpg";
 import carousel4 from "../../../../assets/images/carousel/carousel4.jpg";
-import ten from "../../../../assets/images/Discounts/10.png";
-import fifteen from "../../../../assets/images/Discounts/15.png";
-import twenty from "../../../../assets/images/Discounts/20.png";
+import ten from "../../../../assets/images/discounts/10.png";
+import fifteen from "../../../../assets/images/discounts/15.png";
+import twenty from "../../../../assets/images/discounts/20.png";
 
 export default class RiderHome extends Component {
   constructor(props) {

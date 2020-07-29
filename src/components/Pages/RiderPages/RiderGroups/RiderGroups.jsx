@@ -238,7 +238,11 @@ const RiderGroups = () => {
 
           <MDBCol md="3" className="rider-group-card">
             <MDBTooltip placement="bottom">
-              <MDBBtn color="blue" size="lg" onClick={toggle}>
+              <MDBBtn
+                color="blue"
+                className="rider-groups-btn-padding"
+                onClick={toggle}
+              >
                 <MDBIcon
                   icon="plus-circle"
                   size="8x"

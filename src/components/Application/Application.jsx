@@ -27,6 +27,7 @@ import DriverEarnings from "../Pages/DriverPages/DriverEarnings/DriverEarnings";
 import DriverPackages from "../Pages/DriverPages/DriverPackages/DriverPackages";
 import DriverEditProfile from "../Pages/DriverPages/DriverEditProfile/DriverEditProfile";
 import DriverEditPackages from "../Pages/DriverPages/DriverEditPackages/DriverEditPackages";
+import DriverVehicles from "../Pages/DriverPages/DriverVehicles/DriverVehicles";
 //Other Imports
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -62,6 +63,7 @@ const Application = () => {
             <Switch>
               <Route path="/driver-home" exact component={DriverHome} />
               <Route path="/driver-profile" exact component={DriverProfile} />
+              <Route path="/driver-vehicles" exact component={DriverVehicles} />
               <Route path="/driver-history" exact component={DriverHistory} />
               <Route path="/driver-earnings" exact component={DriverEarnings} />
               <Route path="/driver-packages" exact component={DriverPackages} />
