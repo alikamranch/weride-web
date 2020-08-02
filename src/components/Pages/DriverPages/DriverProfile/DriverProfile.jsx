@@ -53,7 +53,7 @@ const DriverProfile = () => {
                   size="2x"
                   className="rider-profile-icon"
                 />{" "}
-                0 PKR
+                845 PKR
               </div>
               <Link to="/driver-earnings">
                 <MDBBtn size="sm" className="rider-profile-btn" color="#00c853">
