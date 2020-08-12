@@ -34,10 +34,15 @@ const RiderUser = () => {
   const [walletAmount, setWalletAmount] = useState(null);
   //unique id for the existing wallet
   const [existingId, setExistingId] = useState("");
+  //used to store packages array from firestore
+  const packagesArray = [];
+  //package count to display
+  const [packageCount, setPackageCount] = useState(0);
   //new value of the added wallet funds
   var newValue = null;
 
   useEffect(() => {
+    //to get all wallets
     firestore
       .collection("weride")
       .doc("ride_wallet")
@@ -56,6 +61,29 @@ const RiderUser = () => {
             setWalletAmount(0);
           }
         });
+      })
+      .catch(function (error) {
+        console.log("Error getting documents: ", error);
+      });
+
+    //to get how many packages are there
+    let pkg = {};
+    firestore
+      .collection("weride")
+      .doc("package")
+      .collection("packages")
+      .where("riderId", "==", user.uid)
+      .where("active", "==", true)
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          if (doc.exists) {
+            packagesArray.push(pkg);
+          }
+        });
+        if (packagesArray.length !== 0) {
+          setPackageCount(packagesArray.length);
+        }
       })
       .catch(function (error) {
         console.log("Error getting documents: ", error);
@@ -169,7 +197,10 @@ const RiderUser = () => {
               <br />
               <br />
               <div>
-                <strong className="rider-profile-icon">Package: </strong> None
+                <strong className="rider-profile-icon">
+                  Active Packages:{" "}
+                </strong>{" "}
+                {packageCount === 0 ? "None" : packageCount}
                 <br />
                 <Link to="rider-packages">
                   <MDBBtn

@@ -8,6 +8,11 @@ import Home from "../Pages/Home/Home";
 import About from "../Pages/About/About";
 import How from "../Pages/How/How";
 import Ride from "../Pages/Ride/Ride";
+//Admin Pages
+import AdminNavbar from "../Pages/AdminPages/AdminNavbar/AdminNavbar";
+import AdminProfiles from "../Pages/AdminPages/AdminProfiles/AdminProfiles";
+import AdminFares from "../Pages/AdminPages/AdminFares/AdminFares";
+import AdminComplaints from "../Pages/AdminPages/AdminComplaints/AdminComplaints";
 //Rider Pages
 import RiderNavbar from "../Pages/RiderPages/RiderNavbar/RiderNavbar";
 import RiderHome from "../Pages/RiderPages/RiderHome/RiderHome";
@@ -38,7 +43,17 @@ const Application = () => {
   return (
     <div className="App">
       <Router>
-        {user && user.active && user.type === "rider" ? (
+        {user && user.active && user.type === "admin" ? (
+          //Render Admin Pages
+          <React.Fragment>
+            <AdminNavbar />
+            <Switch>
+              <Route path="/admin-profiles" component={AdminProfiles} />
+              <Route path="/admin-fares" component={AdminFares} />
+              <Route path="/admin-complaints" component={AdminComplaints} />
+            </Switch>
+          </React.Fragment>
+        ) : user && user.active && user.type === "rider" ? (
           //Render Rider pages
           <React.Fragment>
             <RiderNavbar />

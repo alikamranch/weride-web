@@ -53,6 +53,7 @@ function Navbar() {
         toggle();
         setEmail("");
         setPassword("");
+        window.location.reload();
         console.log("User Signed In.");
       })
       .catch(function (error) {

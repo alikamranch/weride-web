@@ -35,6 +35,7 @@ const RiderEditGroups = () => {
   const user = useContext(UserContext);
   //to display clicked edit group in modal
   const [modalGroup, setModalGroup] = useState({});
+  //to refresh for state change
   const [refresh, setRefresh] = useState(0);
   //to get the uid of the currently logged in user
   const uid = user.uid;
@@ -66,6 +67,9 @@ const RiderEditGroups = () => {
       .catch(function (error) {
         console.log("Error getting documents: ", error);
       });
+    return () => {
+      setGroups([]);
+    };
   }, [refresh]);
 
   //modal toggle
@@ -120,14 +124,13 @@ const RiderEditGroups = () => {
       .set(updatedGroup)
       .then(function () {
         console.log("Document updated!");
+        setRefresh(refresh + 1);
+        alert("Group Updated");
+        setModal(!modal);
       })
       .catch(function (error) {
         console.error("Error writing document: ", error);
       });
-
-    setRefresh(refresh + 1);
-    alert("Group Updated");
-    setModal(!modal);
   };
   //delete complete group
   const deleteGroup = (event) => {
@@ -140,14 +143,13 @@ const RiderEditGroups = () => {
       .delete()
       .then(function () {
         console.log("Document successfully deleted!");
+        setRefresh(refresh + 1);
+        alert("Group Deleted!");
+        setModal(!modal);
       })
       .catch(function (error) {
         console.error("Error removing document: ", error);
       });
-
-    setRefresh(refresh + 1);
-    alert("Group Deleted!");
-    setModal(!modal);
   };
 
   return (

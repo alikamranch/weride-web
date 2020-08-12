@@ -75,7 +75,9 @@ const RiderGroups = () => {
               // console.log(doc.id, " => ", doc.data());
               rider = doc.data();
               rider["uid"] = doc.id;
-              allRiders.push(rider);
+              if (doc.id !== uid) {
+                allRiders.push(rider);
+              }
             }
           });
           if (allRiders.length !== 0) {

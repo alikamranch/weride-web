@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import {
   MDBContainer,
@@ -13,11 +13,69 @@ import { UserContext } from "../../../../providers/UserProvider";
 import { Link } from "react-router-dom";
 import male from "../../../../assets/images/avatars/male.jpg";
 import female from "../../../../assets/images/avatars/female.jpg";
+import { firestore } from "../../../firebase";
 import "./DriverProfile.css";
 
 const DriverProfile = () => {
+  //used to store packages array from firestore
+  const packagesArray = [];
+  //package count to display
+  const [packageCount, setPackageCount] = useState(0);
+  //to get earnings from firestore
+  const earningsArray = [];
+  //to set total earnings value
+  const [totalEarned, setTotalEarned] = useState(0);
   //Top level state context
   const user = useContext(UserContext);
+  //to get the uid of the currently logged in user
+  const uid = user.uid;
+
+  useEffect(() => {
+    //to get how many packages are there
+    let pkg = {};
+    firestore
+      .collection("weride")
+      .doc("package")
+      .collection("packages")
+      .where("driverId", "==", user.uid)
+      .where("active", "==", true)
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          if (doc.exists) {
+            packagesArray.push(pkg);
+          }
+        });
+        if (packagesArray.length !== 0) {
+          setPackageCount(packagesArray.length);
+        }
+      })
+      .catch(function (error) {
+        console.log("Error getting documents: ", error);
+      });
+
+    //get earnings
+    let sum = 0;
+    firestore
+      .collection("weride")
+      .doc("driver_earning")
+      .collection("driver_earnings")
+      .where("driverId", "==", uid)
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          if (doc.exists) {
+            // console.log(doc.id, " => ", doc.data());
+            earningsArray.push(doc.data());
+            sum = sum + doc.data().earned;
+          }
+        });
+        setTotalEarned(sum);
+      })
+      .catch(function (error) {
+        console.log("Error getting documents: ", error);
+      });
+  }, [user.uid]);
 
   return (
     <div>
@@ -53,7 +111,7 @@ const DriverProfile = () => {
                   size="2x"
                   className="rider-profile-icon"
                 />{" "}
-                845 PKR
+                {totalEarned} PKR
               </div>
               <Link to="/driver-earnings">
                 <MDBBtn size="sm" className="rider-profile-btn" color="#00c853">
@@ -64,7 +122,10 @@ const DriverProfile = () => {
               <br />
               <br />
               <div>
-                <strong className="rider-profile-icon">Package: </strong> None
+                <strong className="rider-profile-icon">
+                  Active Packages:{" "}
+                </strong>{" "}
+                {packageCount === 0 ? "None" : packageCount}
                 <br />
                 <Link to="driver-packages">
                   <MDBBtn
